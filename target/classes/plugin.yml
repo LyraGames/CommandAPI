@@ -1,0 +1,4 @@
+name: Command
+version: '1.0-SNAPSHOT'
+main: net.lyragames.command.CommandAPI
+authors: [ Zowpy ]

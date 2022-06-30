@@ -1,0 +1,4 @@
+name: Command
+version: '${project.version}'
+main: net.lyragames.command.CommandAPI
+authors: [ Zowpy ]
