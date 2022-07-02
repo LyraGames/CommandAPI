@@ -24,124 +24,17 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_8:1.8.8-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="Maven: org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.10" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:17.0" level="project" />
+    <orderEntry type="library" name="Maven: org.avaje:ebean:2.8.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.15" level="project" />
+    <orderEntry type="library" name="Maven: net.md-5:bungeecord-chat:1.8-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.8" level="project" />
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_7:1.7.10-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.7.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_9:1.9-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.9.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_10:1.10-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.10.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_11:1.11-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.11.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_12:1.12-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.12.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_13:1.13-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.13.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_14:1.14-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.14.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_15:1.15-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.15.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_16:1.16.5-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.16.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_17:1.17.1-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.17.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_18:1.18.2-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.18.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: org.spigotmc:spigot-1_19:1.19-R0.1-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/spigot-1.19.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
   </component>
 </module>

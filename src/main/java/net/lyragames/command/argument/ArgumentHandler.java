@@ -9,12 +9,9 @@ import net.lyragames.command.annotation.Sender;
 import net.lyragames.command.command.LyraCommand;
 import net.lyragames.command.provider.Provider;
 import net.lyragames.command.provider.exception.CommandExitException;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.craftbukkit.libs.org.codehaus.plexus.util.cli.Arg;
-import org.bukkit.craftbukkit.v1_8_R3.command.ColouredConsoleSender;
 import org.bukkit.entity.Player;
 
 import java.lang.reflect.InvocationTargetException;
@@ -101,12 +98,18 @@ public class ArgumentHandler {
             }
 
             // combined
-            if ((parameters - indexed) == 1 && argument.isCombined()) {
+            if ((parameters - indexed) >= 1 && argument.isCombined()) {
                 if (argument.getType() != String.class) {
                     throw new IllegalArgumentException("The combined parameter needs to be a string");
                 }
 
-                toReturn.add(Arrays.asList(args).subList(indexed, args.length));
+                StringBuilder builder = new StringBuilder();
+
+                for (String s : Arrays.copyOfRange(args, indexed, args.length)) {
+                    builder.append(s).append(" ");
+                }
+
+                toReturn.add(builder.toString());
                 break;
             }
 
