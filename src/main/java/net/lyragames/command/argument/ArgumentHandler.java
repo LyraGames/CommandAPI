@@ -2,10 +2,7 @@ package net.lyragames.command.argument;
 
 import lombok.RequiredArgsConstructor;
 import net.lyragames.command.CommandAPI;
-import net.lyragames.command.annotation.Combined;
-import net.lyragames.command.annotation.Named;
-import net.lyragames.command.annotation.Optional;
-import net.lyragames.command.annotation.Sender;
+import net.lyragames.command.annotation.*;
 import net.lyragames.command.command.LyraCommand;
 import net.lyragames.command.provider.Provider;
 import net.lyragames.command.provider.exception.CommandExitException;
@@ -64,6 +61,15 @@ public class ArgumentHandler {
                 argument.setCombined(true);
             }
 
+            if (parameter.isAnnotationPresent(Flag.class)) {
+                argument.setFlag(true);
+                argument.setFlagString(parameter.getAnnotation(Flag.class).value());
+
+                if (parameter.getType() != Boolean.class && parameter.getType() != boolean.class) {
+                    throw new IllegalArgumentException("The flag parameter needs to be a boolean!");
+                }
+            }
+
             if (parameter.isAnnotationPresent(Sender.class)) {
                 if (parameter.getType() == CommandSender.class || parameter.getType() == ConsoleCommandSender.class || parameter.getType() == Player.class) {
                     argument.setSender(true);
@@ -85,7 +91,7 @@ public class ArgumentHandler {
 
         List<Argument> requiredArgs = buildArguments(method);
         List<Argument> essentialArgs = requiredArgs.stream()
-                .filter(argument -> !argument.isOptional() && !argument.isSender()).collect(Collectors.toList());
+                .filter(argument -> !argument.isOptional() && !argument.isSender() && !argument.isFlag()).collect(Collectors.toList());
 
         int parameters = method.getParameterCount();
 
@@ -95,6 +101,25 @@ public class ArgumentHandler {
             // usage message
             if (args.length < essentialArgs.size()) {
                 throw new CommandExitException(ChatColor.RED + generateUsage(lyraCommand, requiredArgs));
+            }
+
+            // flags
+            if (argument.isFlag()) {
+                if (args.length <= indexed) {
+                    toReturn.add(false);
+                    continue;
+                }
+
+                String flagArg = args[indexed];
+                boolean flag = argument.getFlagString().equalsIgnoreCase(flagArg) || flagArg.equalsIgnoreCase("-" + argument.getFlagString());
+
+                toReturn.add(flag);
+
+                if (flag) {
+                    indexed++;
+                }
+
+                continue;
             }
 
             // combined
@@ -166,7 +191,7 @@ public class ArgumentHandler {
         for (Argument argument : arguments) {
             if (argument.isSender()) continue;
 
-            if (argument.isOptional()) {
+            if (argument.isOptional() || argument.isFlag()) {
                 builder.append("[");
             }else {
                 builder.append("<");
@@ -174,11 +199,13 @@ public class ArgumentHandler {
 
             if (argument.isNamed()) {
                 builder.append(argument.getName());
+            }else if (argument.isFlag()) {
+                builder.append("-").append(argument.getFlagString());
             }else {
                 builder.append("arg").append(indexed);
             }
 
-            if (argument.isOptional()) {
+            if (argument.isOptional() || argument.isFlag()) {
                 builder.append("]").append(" ");
             }else {
                 builder.append(">").append(" ");

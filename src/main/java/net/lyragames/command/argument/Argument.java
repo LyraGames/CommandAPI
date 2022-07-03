@@ -16,8 +16,10 @@ import lombok.Setter;
 @Getter @Setter @RequiredArgsConstructor
 public class Argument {
 
-    private boolean named, optional, combined, sender;
+    private boolean named, optional, combined, sender, flag;
     private String name;
+
+    private String flagString;
 
     private final Class<?> type;
 }

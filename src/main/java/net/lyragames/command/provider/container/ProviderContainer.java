@@ -5,6 +5,7 @@ import net.lyragames.command.provider.Provider;
 import net.lyragames.command.provider.impl.bukkit.PlayerProvider;
 import net.lyragames.command.provider.impl.primitive.BooleanProvider;
 import net.lyragames.command.provider.impl.primitive.DoubleProvider;
+import net.lyragames.command.provider.impl.primitive.FloatProvider;
 import net.lyragames.command.provider.impl.primitive.IntegerProvider;
 import org.bukkit.entity.Player;
 
@@ -34,6 +35,9 @@ public class ProviderContainer {
 
         providers.put(Boolean.class, new BooleanProvider());
         providers.put(boolean.class, new BooleanProvider());
+
+        providers.put(Float.class, new FloatProvider());
+        providers.put(float.class, new FloatProvider());
 
         providers.put(Player.class, new PlayerProvider());
     }
